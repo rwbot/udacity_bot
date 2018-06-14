@@ -1,10 +1,18 @@
 <?xml version="1.0" ?>
 
+<!--<sdf>: The base element which encapsulates the entire file structure and content.-->
 <sdf version="1.4">
-
+  
+<!--<world>: The world element defines the world description and several properties pertaining to that world. -->
+<!--Each model or property can have further elements that describe it better. -->
   <world name="default">
 
+    <!--
+    <include>: The include element, along with the <uri> element, provide a path to a particular model. 
+    In Gazebo there are several models that are included by default, and you can include them in creating your environment.
+    -->
     <include>
+      <!--Adding ground plane-->
       <uri>model://ground_plane</uri>
     </include>
 
@@ -16,6 +24,7 @@
     <!-- World camera -->
     <gui fullscreen='0'>
       <camera name='world_camera'>
+        <!--For example, the camera has a pose element which defines its position and orientation.-->
         <pose>4.927360 -4.376610 3.740080 0.000000 0.275643 2.356190</pose>
         <view_controller>orbit</view_controller>
       </camera>
