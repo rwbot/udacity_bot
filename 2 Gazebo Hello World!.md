@@ -1,20 +1,19 @@
 
 # Gazebo: Hello, world!
-
-In Term 1, you worked on several projects where most of the project structure was already implemented or provided to you. In this section, you will start from scratch and develop your own package in ROS throughout this project!
+In this section, you will start from scratch and develop your own package in ROS throughout this project!
 
 You  [previously](https://classroom.udacity.com/nanodegrees/nd209/parts/c199593e-1e9a-4830-8e29-2c86f70f489e/modules/2919466f-aa2b-4424-b86a-98b0a53ce335/lessons/658c94f5-f806-4273-9001-9e2838e56856/concepts/a777bc7a-95d4-44ca-b4e3-119718e3a213)  added packages to your ROS workspace,  `catkin_ws`. You can follow the same instructions to create  `catkin_ws`  in the Udacity provided Project Workspace's  `/home/workspace/`  directory.
 
 Let's start by navigating to the  `src`  directory and creating a new empty package.
 
-```
+```u
 $ cd /home/workspace/catkin_ws/src/
 $ catkin_create_pkg udacity_bot
 ```
 
 Next, create folders,  `launch`  and  `worlds`, that will further define the structure of your package.
 
-```
+```bash
 $ cd udacity_bot
 $ mkdir launch
 $ mkdir worlds
@@ -28,11 +27,10 @@ In  `worlds`, you will save each individual Gazebo world. A world is a collectio
 
 ![](https://s3.amazonaws.com/video.udacity-data.com/topher/2017/June/593ae492_gazebo-demo/gazebo-demo.gif)
 
-Cafe world with the Kuka manipulator.
 
 Let's create a simple world, with no objects or models that will be launched later in Gazebo.
 
-```
+```bash
 $ cd worlds
 $ nano udacity.world
 ```
@@ -139,5 +137,5 @@ Empty Gazebo world with a sun shining from the top!
 
 It does look a bit bland, but don't worry, there will soon be a different world for your robot to explore!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2NDk4NTgwMF19
+eyJoaXN0b3J5IjpbLTE2Nzc2MTcxMDgsMTU2NDk4NTgwMF19
 -->
