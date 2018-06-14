@@ -6,7 +6,7 @@ You  [previously](https://classroom.udacity.com/nanodegrees/nd209/parts/c199593e
 
 Let's start by navigating to the  `src`  directory and creating a new empty package.
 
-```u
+```bash
 $ cd /home/workspace/catkin_ws/src/
 $ catkin_create_pkg udacity_bot
 ```
@@ -137,5 +137,5 @@ Empty Gazebo world with a sun shining from the top!
 
 It does look a bit bland, but don't worry, there will soon be a different world for your robot to explore!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Nzc2MTcxMDgsMTU2NDk4NTgwMF19
+eyJoaXN0b3J5IjpbMjk3ODg3NjcsMTU2NDk4NTgwMF19
 -->
