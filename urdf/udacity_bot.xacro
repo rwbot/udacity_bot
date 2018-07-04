@@ -2,10 +2,14 @@
 
 <robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
- <!-- ################### XACRO Definitions ############################# -->
- <!-- ################### XACRO Definitions ############################# -->
- <!-- ################### XACRO Definitions ############################# -->
- <!-- ################### XACRO Definitions ############################# -->
+<!-- ################### XACRO Definitions ############################# -->
+<!-- ################### XACRO Definitions ############################# -->
+<!-- ################### XACRO Definitions ############################# -->
+<!-- ################### XACRO Definitions ############################# -->
+
+<xacro:property name="min_mass" value="0.1"/>
+
+<!-- ################### XACRO Origins ############################# -->
 
  <xacro:macro name="zero_origin">
      <origin xyz="0 0 0" rpy="0 0 0" />
@@ -15,6 +19,8 @@
     <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
 </xacro:macro>
 
+<!-- ################### XACRO Inertias ############################# -->
+
 <xacro:macro name="default_inertia">
     <inertia
         ixx="0.1" ixy="0" ixz="0"
@@ -23,6 +29,13 @@
       />
 </xacro:macro>
 
+<xacro:macro name="min_inertia">
+    <inertia
+        ixx="1e-6" ixy="0" ixz="0"
+        iyy="1e-6" iyz="0"
+        izz="1e-6"
+      />
+</xacro:macro>
 
 <!-- ################### MACRO Generators ############################# -->
 <!-- ################### MACRO Generators ############################# -->
@@ -97,14 +110,14 @@
  <!-- ################### ROBOT Definitions ############################# -->
  <!-- ################### ROBOT Definitions ############################# -->
 
-  <link name="robot_footprint"></link>
-
+<link name="robot_footprint"></link>
   <joint name="robot_footprint_joint" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <parent link="robot_footprint"/>
       <child link="chassis" />
   </joint>
 
+<!-- BEGIN Chassis -->
   <link name='chassis'>
       <pose>0 0 0.1 0 0 0</pose>
 
@@ -155,14 +168,43 @@
             <sphere radius="0.05"/>
         </geometry>
     </visual>
-    
-  </link>
+</link>
+<!-- END Chassis -->
 
-  <xacro:generate_wheel_link side="right"/>
-  <xacro:generate_wheel_link side="left"/>
+<!-- ################### LINK Definitions ############################# -->
+<!-- ################### LINK Definitions ############################# -->
+<!-- ################### LINK Definitions ############################# -->
+<!-- ################### LINK Definitions ############################# -->
 
-  <xacro:generate_wheel_joint side="right"/>
-  <xacro:generate_wheel_joint side="left"/>
+    <xacro:generate_wheel_link side="right"/>
+    <xacro:generate_wheel_link side="left"/>
 
+
+
+<!-- ################### JOINT Definitions ############################# -->
+<!-- ################### JOINT Definitions ############################# -->
+<!-- ################### JOINT Definitions ############################# -->
+<!-- ################### JOINT Definitions ############################# -->
+
+    <xacro:generate_wheel_joint side="right"/>
+    <xacro:generate_wheel_joint side="left"/>
+
+
+<!-- ################### SENSOR Definitions ############################# -->
+    <link name="camera">
+        <inertial>
+            <xacro:zero_origin/>
+            <mass value="${min_mass}"/>
+            <xacro:min_inertia/>
+        </inertial>
+        <collision>
+            <xacro:zero_origin/>
+            <xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>
+        </collision>
+        <visual>
+            <xacro:zero_origin/>
+            <xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>
+        </visual>
+    </link>
 
 </robot>
