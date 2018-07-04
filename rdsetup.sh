@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# source /home/user/catkin_ws/src/rdsetup.sh
+# source /home/user/catkin_ws/src/udacity_bot/rdsetup.sh
 
 
 alias cdc="cd ~/catkin_ws" #custom cd command that goes to catkin_ws
