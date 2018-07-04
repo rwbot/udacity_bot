@@ -188,14 +188,23 @@
 
     <xacro:generate_wheel_joint side="right"/>
     <xacro:generate_wheel_joint side="left"/>
+    
+    <joint name="camera_joint" type="fixed">
+        <origin xyz="0.2 0 0" rpy="0 0 0"/>
+        <parent link="chassis"/>
+        <child link="camera_link"/>
+    </joint>
+    
+    
 
 
-<!-- ################### SENSOR Definitions ############################# -->
-    <link name="camera">
+ <!--################### SENSOR Definitions ############################# -->
+    <link name="camera_link">
         <inertial>
             <xacro:zero_origin/>
-            <mass value="${min_mass}"/>
-            <xacro:min_inertia/>
+            <!--<mass value="${min_mass}"/>-->
+            <mass value="0.1"/>
+            <xacro:default_inertia/>
         </inertial>
         <collision>
             <xacro:zero_origin/>
@@ -206,5 +215,39 @@
             <xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>
         </visual>
     </link>
+    
+    <link name="hokuyo_link">
+        <inertial>
+            <xacro:zero_origin/>
+            <!--<mass value="${min_mass}"/>-->
+            <mass value="0.1"/>
+            <xacro:default_inertia/>
+        </inertial>
+        <collision>
+            <xacro:zero_origin/>
+            <xacro:generate_geometry shape="box" x="0.1" y="0.1" z="0.1"/>
+        </collision>
+        <visual>
+            <xacro:zero_origin/>
+            <!--<xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>-->
+            <geometry>
+                <mesh filename="package://udacity_bot/models/meshes/hokuyo.dae"/>
+            </geometry>
+        </visual>
+    </link>
+    
+    <joint name="hokuyo_joint" type="fixed">
+        <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
+        <parent link="chassis"/>
+        <child link="hokuyo_link"/>
+    </joint>
+    
+    <gazebo reference="hokuyo_link">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>10.0</mu1>
+        <mu2>10.0</mu2>
+        <material>Gazebo/Green</material>
+        </gazebo>
 
 </robot>
