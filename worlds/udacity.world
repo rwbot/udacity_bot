@@ -13,11 +13,13 @@
     -->
     <include>
       <!--Adding ground plane-->
+      <!--<uri>package://ground_plane</uri> << THIS CAUSED THE SPAWNING PROBLEM. NO IDEA HOW IT BECAME PACKAGE -->
       <uri>model://ground_plane</uri>
     </include>
 
     <!-- Light source -->
     <include>
+    <!--<uri>package://sun</uri> << THIS CAUSED THE SPAWNING PROBLEM. NO IDEA HOW IT BECAME PACKAGE -->
       <uri>model://sun</uri>
     </include>
 
