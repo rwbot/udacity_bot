@@ -13,12 +13,12 @@
     -->
     <include>
       <!--Adding ground plane-->
-      <uri>model://ground_plane</uri>
+      <uri>package://ground_plane</uri>
     </include>
 
     <!-- Light source -->
     <include>
-      <uri>model://sun</uri>
+      <uri>package://sun</uri>
     </include>
 
     <!-- World camera -->

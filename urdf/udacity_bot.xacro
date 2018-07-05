@@ -1,6 +1,9 @@
 <?xml version='1.0'?>
 
 <robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    
+<!--Includes Sensor Plugins defined in .gazebo file-->
+<!--<xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />-->
 
 <!-- ################### XACRO Definitions ############################# -->
 <!-- ################### XACRO Definitions ############################# -->
@@ -42,6 +45,15 @@
 <!-- ################### MACRO Generators ############################# -->
 <!-- ################### MACRO Generators ############################# -->
 
+<xacro:macro name="generate_gazebo_reference" params="link_name color">
+    <gazebo reference="${link_name}">
+        <!--<kp>1000.0</kp>-->
+        <!--<kd>1000.0</kd>-->
+        <!--<mu1>10.0</mu1>-->
+        <!--<mu2>10.0</mu2>-->
+        <material>Gazebo/${color}</material>
+    </gazebo>
+</xacro:macro>
 
 <xacro:macro name="generate_geometry" params="shape radius=0 length=0 x=0 y=0 z=0">
 <!--UNITS IN METERS-->
@@ -82,6 +94,9 @@
              <xacro:generate_geometry shape="cylinder" radius="0.1" length="0.05" />
        </visual>
    </link>
+   
+   <xacro:generate_gazebo_reference link_name="${side}_wheel" color="Red"/>
+   
 </xacro:macro>
 
 
@@ -103,6 +118,8 @@
         <dynamics damping="1.0" friction="1.0"/>
     </joint>
 </xacro:macro>
+
+
 
 
  <!-- ################### ROBOT Definitions ############################# -->
@@ -248,6 +265,7 @@
         <mu1>10.0</mu1>
         <mu2>10.0</mu2>
         <material>Gazebo/Green</material>
-        </gazebo>
+    </gazebo>
+    
 
 </robot>
