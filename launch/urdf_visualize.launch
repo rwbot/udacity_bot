@@ -17,7 +17,7 @@
         <param name="use_gui" value="TRUE"/>
     </node>
     <!--Combine joint values-->
-    <node pkg="robot_state_publisher" name="robot_state_publisher" type="state_publisher" />
+    <node pkg="robot_state_publisher" name="robot_state_publisher" type="state_publisher" respawn="false" output="screen" />
 
 
     <!--To launch rviz with a rviz config file-->

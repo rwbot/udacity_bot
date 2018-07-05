@@ -31,8 +31,8 @@
     output="screen" args="-urdf -param robot_description -model udacity_bot"/>
 
     <node pkg="rviz" name="rviz" type="rviz" args="-d $(find udacity_bot)/rviz_config/udacity_bot.rviz" />
-    <!--<node pkg="rviz" name="rviz" type="rviz" args="" />-->
-    
-    <include file="$(find udacity_bot)/launch/urdf_visualize.launch"/>
+
+    <!--Moved contents of urdf_visualize.launch (joint_state_pub and robot_state_pub) into robot_description.launch'-->
+    <!--<include file="$(find udacity_bot)/launch/urdf_visualize.launch"/>-->
 
 </launch>
