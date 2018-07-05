@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- send urdf to param server -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find udacity_bot)/urdf/udacity_bot.xacro'" />
+  
+      <!--Start jointstate publisher & robotstate publisher. These publish the TFs of the URDF of the robot links and joints.-->
+    <!--Send fake joint values-->
+    <node pkg="joint_state_publisher" name="joint_state_publisher" type="joint_state_publisher">
+        <param name="use_gui" value="TRUE"/>
+    </node>
+    <!--Combine joint values-->
+    <node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" />
+
+
+</launch>
