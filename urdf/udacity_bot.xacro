@@ -3,7 +3,7 @@
 <robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
     
 <!--Includes Sensor Plugins defined in .gazebo file-->
-<!--<xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />-->
+<xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />
 
 <!-- ################### XACRO Definitions ############################# -->
 <!-- ################### XACRO Definitions ############################# -->
@@ -95,7 +95,7 @@
        </visual>
    </link>
    
-   <xacro:generate_gazebo_reference link_name="${side}_wheel" color="Red"/>
+   <xacro:generate_gazebo_reference link_name="${side}_wheel" color="Green"/>
    
 </xacro:macro>
 
@@ -206,11 +206,7 @@
     <xacro:generate_wheel_joint side="right"/>
     <xacro:generate_wheel_joint side="left"/>
     
-    <joint name="camera_joint" type="fixed">
-        <origin xyz="0.2 0 0" rpy="0 0 0"/>
-        <parent link="chassis"/>
-        <child link="camera_link"/>
-    </joint>
+    
     
     
 
@@ -232,6 +228,12 @@
             <xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>
         </visual>
     </link>
+    
+    <joint name="camera_joint" type="fixed">
+        <origin xyz="0.2 0 0" rpy="0 0 0"/>
+        <parent link="chassis"/>
+        <child link="camera_link"/>
+    </joint>
     
     <link name="hokuyo_link">
         <inertial>
@@ -259,13 +261,7 @@
         <child link="hokuyo_link"/>
     </joint>
     
-    <gazebo reference="hokuyo_link">
-        <kp>1000.0</kp>
-        <kd>1000.0</kd>
-        <mu1>10.0</mu1>
-        <mu2>10.0</mu2>
-        <material>Gazebo/Green</material>
-    </gazebo>
+
     
 
 </robot>
