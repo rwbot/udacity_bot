@@ -5,6 +5,7 @@
 
 alias cdc="cd ~/catkin_ws" #custom cd command that goes to catkin_ws
 alias cdcs="cd ~/catkin_ws/src" #custom cd command that goes to catkin_ws/SRC
+alias cdcu="cdcs; cd udacity_bot"
 alias cdcmk="cdc; catkin_make; wait; source devel/setup.bash" #goes to catkin_ws, runs catkin_make, waits until it's made, then sources devel/setup.bash
 alias cddcmk="cdc; rm -rf devel build; catkin_make; wait; source devel/setup.bash" #goes to catkin_ws, deletes build and devel directory runs catkin_make, waits until it's made, then sources devel/setup.bash
 

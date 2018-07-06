@@ -1,3 +1,6 @@
+rostopic echo -n1 /move_base/parameter_descriptions > move_base_param_desc.txt
+rostopic echo -n1 /move_base/parameter_updates > move_base_param_updates.txt
+
 groups: 
   - 
     name: "Default"
