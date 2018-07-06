@@ -7,7 +7,7 @@ raytrace_range: 5.0
 #  Time with which to post-date the transform that is published, to indicate that this transform is valid into the future.
 transform_tolerance: 0.2
 
-inflation_radius: 0.5
+inflation_radius: 0.9
 
 observation_sources: laser_scan_sensor
 
