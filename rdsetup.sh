@@ -10,6 +10,11 @@ alias cddcmk="cdc; rm -rf devel build; catkin_make; wait; source devel/setup.bas
 
 alias gitcon="git config --global credential.helper 'cache --timeout=999999'; git config --global user.name 'rwbot'; git config --global user.email'rwbotx@gmail.com'"
 
+
+alias rlu="roslaunch udacity_bot udacity_world.launch"
+alias rla="roslaunch udacity_bot amcl.launch"
+
+
 # alias delg="rosservice call /gazebo/delete_model \"model_name: 'gurdy'\""
 # alias glg="roslaunch my_gurdy_description spawn_gurdy.launch"
 # alias dglg="delg; wait; glg"
