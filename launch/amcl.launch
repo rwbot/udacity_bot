@@ -2,6 +2,8 @@
 
 <launch>
     
+    <include file="$(find udacity_bot)/launch/udacity_world.launch"/>
+    
     <!-- Map Server -->
     <!-- Loads the provided map -->
     <arg name="map_file" default="$(find udacity_bot)/maps/jackal_race.yaml"/>
