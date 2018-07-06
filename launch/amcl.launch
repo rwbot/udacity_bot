@@ -23,10 +23,10 @@
         <param name="base_frame_id" value="robot_footprint"/>
         <param name="global_frame_id" value="map"/>
         
-        <!--Specifies the delay in transform (tf) data that is tolerable in seconds. -->
-        <!--This parameter serves as a safeguard to losing a link in the tf tree while -->
-        <!--still allowing an amount of latency the user is comfortable with to exist in the system.-->
-        <!--~transform_tolerance (double, default: 0.2 seconds)-->
+        <!-- Specifies the delay in transform (tf) data that is tolerable in seconds. -->
+        <!-- This parameter serves as a safeguard to losing a link in the tf tree while -->
+        <!-- still allowing an amount of latency the user is comfortable with to exist in the system.-->
+        <!-- ~transform_tolerance (double, default: 0.2 seconds)-->
         <param name="transform_tolerance" value="0.2"/>
     </node>
     

@@ -3,8 +3,8 @@ map_type: costmap
 obstacle_range: 0.0
 raytrace_range: 0.0
 
-# ~transform_tolerance (double, default: 0.1 seconds)
-# Time with which to post-date the transform that is published, to indicate that this transform is valid into the future.
+#  ~transform_tolerance (double, default: 0.1 seconds)
+#  Time with which to post-date the transform that is published, to indicate that this transform is valid into the future.
 transform_tolerance: 0.1
 
 inflation_radius: 0.0
