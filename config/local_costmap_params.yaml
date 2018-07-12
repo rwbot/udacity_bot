@@ -2,10 +2,10 @@ local_costmap:
    global_frame: odom
    robot_base_frame: robot_footprint
    # Affects map update loop
-   update_frequency: 5.0
-   publish_frequency: 2.0
-   width: 20.0
-   height: 20.0
+   update_frequency: 10.0
+   publish_frequency: 10.0
+   width: 10
+   height: 10
    resolution: 0.05
    static_map: false
    # "rolling_window" sets whether the costmap will remain centered around the robot as it moves. If the static_map parameter is set to true, this parameter must be set to false.
