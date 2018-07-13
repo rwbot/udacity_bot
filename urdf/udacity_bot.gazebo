@@ -3,7 +3,7 @@
 
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-      <robotNamespace>/udacity_bot</robotNamespace>
+      <!--<robotNamespace>/udacity_bot</robotNamespace>-->
       <legacyMode>false</legacyMode>
       <alwaysOn>true</alwaysOn>
       <updateRate>10</updateRate>
