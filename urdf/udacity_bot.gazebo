@@ -3,6 +3,7 @@
 
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <robotNamespace>/udacity_bot</robotNamespace>
       <legacyMode>false</legacyMode>
       <alwaysOn>true</alwaysOn>
       <updateRate>10</updateRate>
@@ -36,6 +37,7 @@
         </clip>
       </camera>
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <robotNamespace>/udacity_bot</robotNamespace>
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
         <cameraName>udacity_bot/camera1</cameraName>
@@ -83,6 +85,7 @@
         </noise>
       </ray>
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+        <robotNamespace>/udacity_bot</robotNamespace>
         <topicName>/udacity_bot/laser/scan</topicName>
         <frameName>hokuyo_link</frameName>
       </plugin>

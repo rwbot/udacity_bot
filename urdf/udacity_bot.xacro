@@ -2,8 +2,7 @@
 
 <robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
     
-<!--Includes Sensor Plugins defined in .gazebo file-->
-<xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />
+
 
 <!-- ################### XACRO Definitions ############################# -->
 <!-- ################### XACRO Definitions ############################# -->
@@ -126,8 +125,12 @@
  <!-- ################### ROBOT Definitions ############################# -->
  <!-- ################### ROBOT Definitions ############################# -->
  <!-- ################### ROBOT Definitions ############################# -->
+ 
+<!--Includes Sensor Plugins defined in .gazebo file-->
+<xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />
 
 <link name="robot_footprint"></link>
+
   <joint name="robot_footprint_joint" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <parent link="robot_footprint"/>
