@@ -31,7 +31,8 @@
     output="screen" args="-urdf -param robot_description -model udacity_bot"/>
 
 
-    <!-- <node pkg="rviz" name="rviz" type="rviz" args="-d $(find udacity_bot)/rviz_config/navigation_visualization.rviz" /> -->
+     <!--<node pkg="rviz" name="rviz" type="rviz" args="-d $(find udacity_bot)/rviz_config/navigation_visualization.rviz" /> -->
+<node pkg="rviz" name="rviz" type="rviz" args="" /> 
 
 
 </launch>
