@@ -9,9 +9,9 @@ alias cdcu="cdcs; cd udacity_bot"
 alias cdcmk="cdc; catkin_make; wait; source devel/setup.bash" #goes to catkin_ws, runs catkin_make, waits until it's made, then sources devel/setup.bash
 alias cddcmk="cdc; rm -rf devel build; catkin_make; wait; source devel/setup.bash" #goes to catkin_ws, deletes build and devel directory runs catkin_make, waits until it's made, then sources devel/setup.bash
 
-alias gitcon="git config --global credential.helper 'cache --timeout=999999'; git config --global user.name 'rwbot'; git config --global user.email 'rwbotx@gmail.com'"
+alias gitcon="git config --global credential.helper 'cache --timeout=999999'; git config --global user.name 'rwbot'; git config --global user.email'rwbotx@gmail.com'"
 
-alias rlz="roslaunch udacity_bot rviz.launch"
+
 alias rlu="roslaunch udacity_bot udacity_world.launch"
 alias rla="roslaunch udacity_bot amcl.launch"
 
@@ -26,6 +26,6 @@ alias rla="roslaunch udacity_bot amcl.launch"
 
 git config --global credential.helper 'cache --timeout=999999' 
 git config --global user.name 'rwbot'
-git config --global user.email 'rwbotx@gmail.com'
+git config --global user.email'rwbotx@gmail.com'
 
 source ~/.bashrc
