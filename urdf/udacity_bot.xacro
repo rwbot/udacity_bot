@@ -215,7 +215,7 @@
 
 
  <!--################### SENSOR Definitions ############################# -->
-    <link name="camera_link">
+    <link name="camera">
         <inertial>
             <xacro:zero_origin/>
             <!--<mass value="${min_mass}"/>-->
@@ -235,10 +235,10 @@
     <joint name="camera_joint" type="fixed">
         <origin xyz="0.2 0 0" rpy="0 0 0"/>
         <parent link="chassis"/>
-        <child link="camera_link"/>
+        <child link="camera"/>
     </joint>
     
-    <link name="hokuyo_link">
+    <link name="hokuyo">
         <inertial>
             <xacro:zero_origin/>
             <!--<mass value="${min_mass}"/>-->
@@ -261,7 +261,7 @@
     <joint name="hokuyo_joint" type="fixed">
         <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
         <parent link="chassis"/>
-        <child link="hokuyo_link"/>
+        <child link="hokuyo"/>
     </joint>
     
 

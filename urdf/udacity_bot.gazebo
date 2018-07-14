@@ -20,7 +20,7 @@
   </gazebo>
 
 
-  <gazebo reference="camera_link">
+  <gazebo reference="camera">
     <material>Gazebo/Green</material>
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
@@ -37,13 +37,13 @@
         </clip>
       </camera>
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-        <robotNamespace>/udacity_bot</robotNamespace>
+        <!--<robotNamespace>/udacity_bot</robotNamespace>-->
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
         <cameraName>udacity_bot/camera1</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <frameName>camera_link</frameName>
+        <frameName>camera</frameName>
         <hackBaseline>0.07</hackBaseline>
         <distortionK1>0.0</distortionK1>
         <distortionK2>0.0</distortionK2>
@@ -55,7 +55,7 @@
   </gazebo>
 
   <!-- hokuyo -->
-  <gazebo reference="hokuyo_link">
+  <gazebo reference="hokuyo">
     <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
@@ -85,9 +85,9 @@
         </noise>
       </ray>
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-        <robotNamespace>/udacity_bot</robotNamespace>
+        <!--<robotNamespace>/udacity_bot</robotNamespace>-->
         <topicName>/udacity_bot/laser/scan</topicName>
-        <frameName>hokuyo_link</frameName>
+        <frameName>hokuyo</frameName>
       </plugin>
     </sensor>
   </gazebo>
