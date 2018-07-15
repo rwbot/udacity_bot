@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 
 <launch>
-    
+
     <include file="$(find udacity_bot)/launch/udacity_world.launch"/>
-    
+
     <!-- Map Server -->
     <!-- Loads the provided map -->
     <arg name="map_file" default="$(find udacity_bot)/maps/jackal_race.yaml"/>
     <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)"/>
-    
-    
-    
+
+
+
     <!-- Launches AMCL node to perform localization -->
     <node pkg="amcl" type="amcl" name="amcl" output="screen">
         <!--Remapping AMCL's laser data param to the topic our bot publishes to-->
@@ -24,35 +24,38 @@
         <param name="odom_frame_id" value="odom"/>
         <param name="base_frame_id" value="robot_footprint"/>
         <param name="global_frame_id" value="map"/>
-        
+
         <!-- Specifies the delay in transform (tf) data that is tolerable in seconds. -->
         <!-- This parameter serves as a safeguard to losing a link in the tf tree while -->
         <!-- still allowing an amount of latency the user is comfortable with to exist in the system.-->
         <!-- ~transform_tolerance (double, default: 0.2 seconds)-->
         <param name="transform_tolerance" value="0.2"/>
     </node>
-    
-    
-    
+
+
+
     <!-- move_base pkg offers navigation tools needed to define a path for the robot -->
     <!-- Utilizes a dynamic costmap, and has built-in corrective behaviors and maneuvers-->
     <!-- Example, if robot is stuck, it will automatically perform a recovery maneuver -->
     <node pkg="move_base" type="move_base" name="move_base" respawn="false" output="screen">
+
+        <param name="base_global_planner" type="string" value="navfn/NavfnROS"/>
+        <!-- <param name="base_global_planner" type="string" value="global_planner/GlobalPlanner"/> -->
+        <rosparam command="load" file="$(find udacity_bot)/config/base_global_planner_params.yaml"/>
         <rosparam command="load" file="$(find udacity_bot)/config/costmap_common_params.yaml" ns="global_costmap"/>
+        <rosparam command="load" file="$(find udacity_bot)/config/global_costmap_params.yaml"/>
+
+        <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+        <rosparam command="load" file="$(find udacity_bot)/config/base_local_planner_params.yaml"/>
         <rosparam command="load" file="$(find udacity_bot)/config/costmap_common_params.yaml" ns="local_costmap"/>
         <rosparam command="load" file="$(find udacity_bot)/config/local_costmap_params.yaml"/>
-        <rosparam command="load" file="$(find udacity_bot)/config/global_costmap_params.yaml"/>
-        <rosparam command="load" file="$(find udacity_bot)/config/base_local_planner_params.yaml"/>
-        
-        <param name="base_global_planner" type="string" value="navfn/NavfnROS"/>
-        <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
-        
+
         <remap from="scan" to="udacity_bot/laser/scan"/>
         <!-- Why are these necessary? -->
         <remap from="cmd_vel" to="cmd_vel"/>
         <remap from="odom" to="odom"/>
     </node>
-    
+
 </launch>
 
 

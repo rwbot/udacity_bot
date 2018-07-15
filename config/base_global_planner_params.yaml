@@ -1,0 +1,16 @@
+#GlobalPlanner:
+
+NavfnROS:
+
+
+# cost = COST_NEUTRAL + COST_FACTOR * costmap_cost_value
+ # Incoming costmap cost values are within [0, 252]
+ #  With COST_NEUTRAL of 50, the COST_FACTOR needs to be
+ #  about 0.8 to ensure the input values are spread evenly over the
+ #  output range, 50 to 253. If COST_FACTOR is higher, cost values
+ #  will have a plateau around obstacles and the planner will then
+ #  treat (for example) the whole width of a narrow hallway as
+ #  equally undesirable and thus will not plan paths down the center
+    cost_factor: 0.55   #d=3
+    neutral_cost: 66    #d=50
+    lethal_cost: 253    #d=253
