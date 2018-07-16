@@ -13,6 +13,8 @@ alias gitcon="git config --global credential.helper 'cache --timeout=999999'; gi
 #
 alias rlu="roslaunch udacity_bot udacity_world.launch" #
 alias rla="roslaunch udacity_bot amcl.launch" #
+alias rlz="roslaunch udacity_bot rviz.launch" #
+alias rlg="roslaunch udacity_bot gui.launch" #
 
 # alias delg="rosservice call /gazebo/delete_model \"model_name: 'gurdy'\""
 # alias glg="roslaunch my_gurdy_description spawn_gurdy.launch"
