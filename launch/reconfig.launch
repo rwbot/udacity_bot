@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!--To launch rqt_gui with a rqt_gui perspective file-->
+    <!--<node pkg="rqt_gui" name="rqt_gui" type="rqt_gui" args="-d $(find pkg)/rqt_config_folder/rqt_gui_config_file.perspective"/>-->
+
+    <!-- 't' flag, explicitly `- -on-top` sets the window to always stay on top-->
+
+    <node pkg="rqt_gui" name="rqt_gui" type="rqt_gui" args="-t --perspective-file $(find udacity_bot)/rqt/amcl_AND_move_base.perspective" />
+</launch>

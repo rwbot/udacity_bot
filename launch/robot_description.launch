@@ -9,10 +9,10 @@
       <!--Start jointstate publisher & robotstate publisher. These publish the TFs of the URDF of the robot links and joints.-->
     <!--Send fake joint values-->
     <node pkg="joint_state_publisher" name="joint_state_publisher" type="joint_state_publisher">
-        <param name="use_gui" value="false"/>
+        <param name="use_gui" value="false" clear_params="true" />
     </node>
     <!--Combine joint values-->
-    <node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" />
+    <node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" clear_params="true" />
 
 
 </launch>

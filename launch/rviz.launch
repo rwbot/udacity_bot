@@ -9,5 +9,8 @@
     <!--<node pkg="rviz" name="rviz" type="rviz" args="-d $(find udacity_bot)/rviz_config/udacity_bot.rviz" />-->
     <!-- Launch amcl mapping config-->
     <!--<node pkg="rviz" name="rviz" type="rviz" args="-d $(find udacity_bot)/rviz_config/amcl.rviz" />-->
+    
+    <!-- `-d` flag, explicitly `- -display-config`, loads the named .rviz config file-->
+    
     <node pkg="rviz" name="rviz" type="rviz" args="-d $(find udacity_bot)/rviz_config/navigation_visualization.rviz" />
 </launch>
