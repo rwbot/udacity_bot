@@ -4,11 +4,11 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /RobotModel1/Status1
+        - /Global Options1
+        - /TF1
         - /TF1/Frames1
         - /TF1/Tree1
         - /Global Map1
-        - /Global Map1/Planner1
         - /Local Map1/Planner1
       Splitter Ratio: 0.541176498
     Tree Height: 577
@@ -61,6 +61,35 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        camera:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chassis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hokuyo:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        robot_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -73,27 +102,29 @@ Visualization Manager:
       Frames:
         All Enabled: false
         camera:
-          Value: true
+          Value: false
         chassis:
-          Value: true
+          Value: false
         hokuyo:
-          Value: true
+          Value: false
         left_wheel:
-          Value: true
+          Value: false
         map:
           Value: true
         odom:
           Value: true
         right_wheel:
-          Value: true
+          Value: false
         robot_footprint:
-          Value: true
-      Marker Scale: 1
+          Value: false
+      Marker Scale: 5
       Name: TF
       Show Arrows: true
       Show Axes: true
-      Show Names: false
+      Show Names: true
       Tree:
+        map:
+          {}
         odom:
           robot_footprint:
             chassis:
@@ -131,7 +162,7 @@ Visualization Manager:
       Selectable: true
       Size (Pixels): 3
       Size (m): 0.00999999978
-      Style: Squares
+      Style: Points
       Topic: /udacity_bot/laser/scan
       Unreliable: false
       Use Fixed Frame: true
@@ -197,7 +228,7 @@ Visualization Manager:
           Head Diameter: 0.300000012
           Head Length: 0.200000003
           Length: 0.300000012
-          Line Style: Lines
+          Line Style: Billboards
           Line Width: 0.0299999993
           Name: Planner
           Offset:
@@ -317,7 +348,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -0.61500001
+      Angle: -0.610000014
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
@@ -327,11 +358,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 49.3172379
+      Scale: 33.0347557
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 2.35513425
-      Y: 2.67641997
+      X: 1.91033173
+      Y: 2.14619064
     Saved: ~
 Window Geometry:
   Displays:
@@ -349,5 +380,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1024
-  X: 0
-  Y: 20
+  X: -1
+  Y: 0

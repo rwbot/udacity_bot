@@ -10,7 +10,7 @@ dictitems:
         state: []
       id: 0
       inflate_unknown: false
-      inflation_radius: 0.4
+      inflation_radius: 0.8
       name: Default
       parameters: !!python/object/new:dynamic_reconfigure.encoding.Config
         state: []
@@ -19,5 +19,5 @@ dictitems:
       type: ''
     state: []
   inflate_unknown: false
-  inflation_radius: 0.4
+  inflation_radius: 0.8
 state: []

@@ -10,7 +10,9 @@ transform_tolerance: 0.4
 inflation_radius: 0.8
 
 footprint: [[0.2, 0.2], [-0.2, 0.2], [-0.2, -0.2], [0.2, -0.2]]
-
+footprint_padding: 0.1
+# For circular robots
+#robot_radius: 0.69
 
 observation_sources: laser_scan_sensor
 
