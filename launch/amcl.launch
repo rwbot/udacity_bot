@@ -47,7 +47,7 @@
     <!-- Example, if robot is stuck, it will automatically perform a recovery maneuver -->
     <node pkg="move_base" type="move_base" name="move_base" respawn="false" clear_params="true" output="screen">
         <rosparam command="load" file="$(find udacity_bot)/config/move_base_params.yaml"/>
-        <param name="planner_frequency" value="10"/>
+        <param name="planner_frequency" value="5"/>
 
         <!--Global Planner-->
         <param name="base_global_planner" type="string" value="navfn/NavfnROS"/>

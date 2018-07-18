@@ -1,31 +1,31 @@
 TrajectoryPlannerROS:
 
     # Robot Configuration
-    acc_lim_x: 2.5
+    acc_lim_x: 1
     acc_lim_y: 0
     acc_lim_theta: 3
-    
-    min_vel_x: -4
+
+    min_vel_x: -1
     min_vel_theta: -4
     min_in_place_vel_theta: 0.5
     escape_vel: -4
-    
-    max_vel_x: 4
+
+    max_vel_x: 1
     max_vel_theta: 4
     max_in_place_vel_theta: 4
-    
+
     holonomic_robot: false
-    
+
     # Goal Tolerance
     yaw_goal_tolerance: 0.069
     xy_goal_tolerance: 0.15
-    
+
     # Forward Simulation
     sim_time: 2.5                 #d=1
     vx_samples: 10              #d=3
     vtheta_samples: 30          #d=20
     controller_frequency: 20    #d=20
-    
+
     # Trajectory Scoring
     # cost = pdist_scale * (distance to path from the endpoint of the trajectory in map cells/meters)
     # + gdist_scale * (distance to local goal from the endpoint of the trajectory in map cells/metersr)
@@ -36,7 +36,7 @@ TrajectoryPlannerROS:
     occdist_scale: 0.03         #d=0.01         #Weighting for how much should it attempt to avoid obstacles
     dwa: false                   #d=true
     oscillation_reset_dist: 0.05    #d=0.05
-    
+
 
     # Rainbow Cost Cloud
     publish_cost_grid_pc: true  #d=false
