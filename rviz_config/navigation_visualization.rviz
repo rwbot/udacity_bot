@@ -10,6 +10,7 @@ Panels:
         - /Global Map1
         - /Global Map1/Costmap1
         - /Local Map1
+        - /Local Map1/Cost Cloud1
       Splitter Ratio: 0.505543232
     Tree Height: 729
   - Class: rviz/Selection
@@ -29,7 +30,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -61,35 +62,6 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        camera:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chassis:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hokuyo:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        left_wheel:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        right_wheel:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        robot_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -252,7 +224,7 @@ Visualization Manager:
           Topic: /move_base/TrajectoryPlannerROS/local_plan
           Unreliable: false
           Value: true
-        - Alpha: 0.300000012
+        - Alpha: 0.25
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
             Max Value: 0
@@ -275,7 +247,7 @@ Visualization Manager:
           Queue Size: 15
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.0500000007
+          Size (m): 0.0399999991
           Style: Squares
           Topic: /move_base/TrajectoryPlannerROS/cost_cloud
           Unreliable: false
@@ -352,5 +324,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1178
-  X: 1
-  Y: 0
+  X: 0
+  Y: -26
