@@ -5,12 +5,12 @@
     <!--<node pkg="rviz" name="rviz" type="rviz" args="-d $(find pkg)/rviz_config/rviz_config_file.rviz"/>-->
     <!--<node pkg="rviz" name="rviz" type="rviz" args="-d $(find my_gurdy_description)/rviz_config/urdf.rviz" />-->
     <!--<node pkg="rviz" name="rviz" type="rviz" args="" />-->
-    
+
     <!--<node pkg="rviz" name="rviz" type="rviz" args="-d $(find udacity_bot)/rviz_config/udacity_bot.rviz" />-->
     <!-- Launch amcl mapping config-->
     <!--<node pkg="rviz" name="rviz" type="rviz" args="-d $(find udacity_bot)/rviz_config/amcl.rviz" />-->
-    
+
     <!-- `-d` flag, explicitly `- -display-config`, loads the named .rviz config file-->
-    
+    <!-- <node pkg="rviz" name="rviz" type="rviz" args="" /> -->
     <node pkg="rviz" name="rviz" type="rviz" args="-d $(find udacity_bot)/rviz_config/navigation_visualization.rviz" />
 </launch>

@@ -30,7 +30,15 @@
         <!-- still allowing an amount of latency the user is comfortable with to exist in the system.-->
         <!-- ~transform_tolerance (double, default: 0.2 seconds)-->
         <param name="transform_tolerance" value="0.2"/>
+
+		<param name="min_particles" value="20"/>
+		<param name="max_particles" value="200"/>
+		<param name="initial_pose_x" value="0.0"/>
+		<param name="initial_pose_y" value="0.0"/>
+		<param name="initial_pose_z" value="0.0"/>
     </node>
+
+
 
 
 
@@ -39,20 +47,21 @@
     <!-- Example, if robot is stuck, it will automatically perform a recovery maneuver -->
     <node pkg="move_base" type="move_base" name="move_base" respawn="false" clear_params="true" output="screen">
         <rosparam command="load" file="$(find udacity_bot)/config/move_base_params.yaml"/>
-        
+        <param name="planner_frequency" value="10"/>
+
         <!--Global Planner-->
         <param name="base_global_planner" type="string" value="navfn/NavfnROS"/>
         <!-- <param name="base_global_planner" type="string" value="global_planner/GlobalPlanner"/> -->
         <!--<rosparam command="load" file="$(find udacity_bot)/config/base_global_planner_params.yaml"/>-->
         <rosparam command="load" file="$(find udacity_bot)/config/costmap_common_params.yaml" ns="global_costmap"/>
         <rosparam command="load" file="$(find udacity_bot)/config/global_costmap_params.yaml"/>
-        
+
         <!--Local Planner-->
         <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
         <rosparam command="load" file="$(find udacity_bot)/config/base_local_planner_params.yaml"/>
         <rosparam command="load" file="$(find udacity_bot)/config/costmap_common_params.yaml" ns="local_costmap"/>
         <rosparam command="load" file="$(find udacity_bot)/config/local_costmap_params.yaml"/>
-        
+
         <remap from="scan" to="udacity_bot/laser/scan"/>
         <!-- Why are these necessary? -->
         <remap from="cmd_vel" to="cmd_vel"/>

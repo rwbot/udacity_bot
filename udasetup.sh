@@ -16,6 +16,7 @@ alias cddcmk="cdc; rm -rf devel build; catkin_make; wait; source devel/setup.bas
 alias kz="killall gazebo & killall gzserver & killall gzclient" #kills gazebo if frozen
 alias rlu="roslaunch udacity_bot udacity_world.launch"
 alias rla="roslaunch udacity_bot amcl.launch"
-
+alias rlz="roslaunch udacity_bot rviz.launch" 
+alias rlg="roslaunch udacity_bot gui.launch" 
 
 source ~/.bashrc
