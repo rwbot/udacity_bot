@@ -17,6 +17,8 @@ alias kz="killall gazebo & killall gzserver & killall gzclient" #kills gazebo if
 alias rlu="roslaunch udacity_bot udacity_world.launch"
 alias rla="roslaunch udacity_bot amcl.launch"
 alias rlz="roslaunch udacity_bot rviz.launch" 
+alias rlr="roslaunch udacity_bot reconfig.launch" 
 alias rlg="roslaunch udacity_bot gui.launch" 
+alias rlk="roslaunch udacity_bot keyboard_teleop.launch
 
 source ~/.bashrc
