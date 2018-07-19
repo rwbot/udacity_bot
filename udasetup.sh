@@ -22,4 +22,4 @@ alias rlg="roslaunch udacity_bot gui.launch"
 alias rlk="roslaunch udacity_bot keyboard_teleop.launch"
 alias rln="rosrun udacity_bot navigation_goal"
 
-source ~/.bashrc
+
