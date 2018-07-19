@@ -2,18 +2,18 @@ local_costmap:
     global_frame: odom
     robot_base_frame: robot_footprint
     # Affects map update loop
-    update_frequency: 10.0
-    publish_frequency: 10.0
+# update_frequency: 10.0
+# publish_frequency: 10.0
     width: 5
     height: 5
     resolution: 0.05
     static_map: false
     # "rolling_window" sets whether the costmap will remain centered around the robot as it moves. If the static_map parameter is set to true, this parameter must be set to false.
     rolling_window: true
-    
-    # Local Costmap Plugins 
-    plugins:
-        - {name: obstacle_layer,           type: "costmap_2d::ObstacleLayer"}
-        - {name: inflation_layer,          type: "costmap_2d::InflationLayer"}
-    # NOTE: LOCAL Obstacle Layer is ObstacleLayer, GLOBAL Obstacle Layer is VoxelLayer
-    
+
+    # # Local Costmap Plugins 
+    # plugins:
+    #     - {name: obstacle_layer,           type: "costmap_2d::ObstacleLayer"}
+    #     - {name: inflation_layer,          type: "costmap_2d::InflationLayer"}
+    # # NOTE: LOCAL Obstacle Layer is ObstacleLayer, GLOBAL Obstacle Layer is VoxelLayer
+    #

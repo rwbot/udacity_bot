@@ -1,43 +1,45 @@
+controller_frequency: 10    #d=20
+
 TrajectoryPlannerROS:
 
-    # Robot Configuration
-    acc_lim_x: 1.5
-    acc_lim_y: 0
-    acc_lim_theta: 1.5
-
-    min_vel_x: -3
-    min_vel_theta: -3
-    min_in_place_vel_theta: 1
-    escape_vel: -4
-
-    max_vel_x: 3
-    max_vel_theta: 3
-    max_in_place_vel_theta: 3
+# # Robot Configuration
+# acc_lim_x: 1.5
+# acc_lim_y: 0
+# acc_lim_theta: 1.5
+#
+# min_vel_x: -3
+# min_vel_theta: -3
+# min_in_place_vel_theta: 1
+# escape_vel: -4
+#
+# max_vel_x: 3
+# max_vel_theta: 3
+# max_in_place_vel_theta: 3
 
     holonomic_robot: false
 
-    # Goal Tolerance
-    yaw_goal_tolerance: 0.069
-    xy_goal_tolerance: 0.10
+# # Goal Tolerance
+# yaw_goal_tolerance: 0.069
+# xy_goal_tolerance: 0.10
 
-    # Forward Simulation
-    sim_time: 2.5                 #d=1
-    sim_granularity: 0.025
-    angular_sim_granularity: 0.025
-    vx_samples: 3              #d=3
-    vtheta_samples: 20          #d=20
-    controller_frequency: 15    #d=20
+# # Forward Simulation
+# sim_time: 2.5                 #d=1
+# sim_granularity: 0.025
+# angular_sim_granularity: 0.025
+# vx_samples: 3              #d=3
+# vtheta_samples: 20          #d=20
+# controller_frequency: 15    #d=20
 
     # Trajectory Scoring
     # cost = pdist_scale * (distance to path from the endpoint of the trajectory in map cells/meters)
     # + gdist_scale * (distance to local goal from the endpoint of the trajectory in map cells/metersr)
     # + occdist_scale * (maximum obstacle cost along the trajectory in obstacle cost (0-254))
-    meter_scoring: true         #d=false
-    pdist_scale: 0.8            #d=0.6 [0 > 5]
-    gdist_scale: 0.6            #d=0.6 [0 > 5]
+    # meter_scoring: true         #d=false
+    pdist_scale: 1.0            #d=0.6 [0 > 5]
+    gdist_scale: 0.4            #d=0.6 [0 > 5]
     occdist_scale: 0.01         #d=0.01         #Weighting for how much should it attempt to avoid obstacles
-    dwa: false                   #d=true
-    oscillation_reset_dist: 0.05    #d=0.05
+    # dwa: false                   #d=true
+    # oscillation_reset_dist: 0.05    #d=0.05
 
 
     # Rainbow Cost Cloud

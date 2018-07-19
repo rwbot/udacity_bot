@@ -46,10 +46,10 @@
 
 <xacro:macro name="generate_gazebo_reference" params="link_name color">
     <gazebo reference="${link_name}">
-        <kp>10000000.0</kp>
+        <!-- <kp>10000000.0</kp>
         <kd>1.0</kd>
         <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
+        <mu2>1.0</mu2> -->
         <material>Gazebo/${color}</material>
     </gazebo>
 </xacro:macro>
@@ -114,7 +114,7 @@
         <child link="${side}_wheel"/>
         <axis xyz="0 1 0" rpy="0 0 0"/>
         <limit effort="10000" velocity="1000"/>
-        <dynamics damping="1.0" friction="1.0"/>
+        <joint_properties damping="1.0" friction="1.0"/>
     </joint>
 </xacro:macro>
 
@@ -164,7 +164,7 @@
     <collision name='back_caster_collision'>
         <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
         <geometry>
-            <sphere radius="0.0499"/>
+            <sphere radius="0.05"/>
         </geometry>
         <surface>
               <friction>
