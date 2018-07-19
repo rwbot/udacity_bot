@@ -47,9 +47,9 @@
 
         <!-- <param name="" value=""/> -->
         <param name="laser_model_type" value="likelihood_field"/>
-        <param name="laser_likelihood_max_dist" value="4.0"/>
-        <param name="laser_z_hit" value="0.95"/>
-        <param name="laser_z_rand" value="0.05"/>
+        <!-- <param name="laser_likelihood_max_dist" value="4.0"/> -->
+        <!-- <param name="laser_z_hit" value="0.95"/> -->
+        <!-- <param name="laser_z_rand" value="0.05"/> -->
         <param name="laser_min_range" value="0.4"/>
         <!-- <param name="laser_max_range" value=""/> -->
     </node>
@@ -63,7 +63,7 @@
     <!-- Example, if robot is stuck, it will automatically perform a recovery maneuver -->
     <node pkg="move_base" type="move_base" name="move_base" respawn="false" clear_params="true" output="screen">
         <rosparam command="load" file="$(find udacity_bot)/config/move_base_params.yaml"/>
-        <param name="planner_frequency" value="5"/>
+        <!-- <param name="planner_frequency" value="5"/> -->
 
         <!--Global Planner-->
         <!-- <param name="base_global_planner" type="string" value="global_planner/GlobalPlanner"/> -->
