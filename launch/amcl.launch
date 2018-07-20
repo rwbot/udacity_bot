@@ -32,8 +32,8 @@
         <param name="transform_tolerance" value="0.2"/>
         <param name="update_min_d" value="0.01"/>
         <param name="update_min_a" value="0.01"/>
-		<param name="min_particles" value="50"/>
-		<param name="max_particles" value="500"/>
+		<param name="min_particles" value="10"/>
+		<param name="max_particles" value="100"/>
 		<param name="initial_pose_x" value="0.0"/>
 		<param name="initial_pose_y" value="0.0"/>
 		<param name="initial_pose_a" value="0.0"/>
@@ -64,6 +64,7 @@
     <node pkg="move_base" type="move_base" name="move_base" respawn="false" clear_params="true" output="screen">
         <rosparam command="load" file="$(find udacity_bot)/config/move_base_params.yaml"/>
         <!-- <param name="planner_frequency" value="5"/> -->
+        <param name="planner_frequency" value="5"/>
 
         <!--Global Planner-->
         <!-- <param name="base_global_planner" type="string" value="global_planner/GlobalPlanner"/> -->

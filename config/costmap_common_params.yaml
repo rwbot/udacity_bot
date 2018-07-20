@@ -15,14 +15,13 @@ xy_goal_tolerance: 0.2
 yaw_goal_tolerance: 0.1
 
 # footprint: [[0.2, 0.2], [-0.2, 0.2], [-0.2, -0.2], [0.2, -0.2]]
-# footprint_padding: 0.1
+#footprint_padding: 0.05
 # For circular robots
 #robot_radius: 0.69
 
 
-    # cost_scaling_factor: 3.0    #1
-inflation_radius: 0.6       #0.5
+
 # Inflation Layer Params
-# inflation_layer:
-    # cost_scaling_factor: 3.0    #1
-    # inflation_radius: 0.6       #0.5
+#inflation_layer:
+#     cost_scaling_factor: 1    #1
+#     inflation_radius: 0.5       #0.5

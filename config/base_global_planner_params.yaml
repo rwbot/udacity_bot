@@ -11,6 +11,6 @@ NavfnROS:
  #  will have a plateau around obstacles and the planner will then
  #  treat (for example) the whole width of a narrow hallway as
  #  equally undesirable and thus will not plan paths down the center
-    cost_factor: 0.9   #d=3
-    neutral_cost: 30    #d=50
+    cost_factor: 10   #d=3
+    neutral_cost: 1    #d=50
     lethal_cost: 253    #d=253

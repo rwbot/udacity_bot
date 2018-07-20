@@ -9,6 +9,7 @@ Panels:
         - /TF1/Tree1
         - /Global Map1/Costmap1
         - /Local Map1/Cost Cloud1
+        - /Amcl Particles1
       Splitter Ratio: 0.505543232
     Tree Height: 744
   - Class: rviz/Selection
@@ -283,12 +284,12 @@ Visualization Manager:
           Value: true
       Enabled: true
       Name: Local Map
-    - Alpha: 0.100000001
-      Arrow Length: 0.0689999983
+    - Alpha: 0.600000024
+      Arrow Length: 0.300000012
       Axes Length: 0.300000012
       Axes Radius: 0.00999999978
       Class: rviz/PoseArray
-      Color: 255; 102; 0
+      Color: 255; 255; 0
       Enabled: true
       Head Length: 0.0700000003
       Head Radius: 0.0299999993
@@ -334,7 +335,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0.765000045
+      Angle: 0.760000169
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
@@ -344,11 +345,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 61.1968803
+      Scale: 53.7075691
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 3.69981647
-      Y: -1.02644324
+      X: 3.50073147
+      Y: -0.169977009
     Saved: ~
 Window Geometry:
   Displays:
@@ -366,5 +367,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1234
-  X: 4
-  Y: 4
+  X: 3
+  Y: -22
