@@ -12,7 +12,10 @@
 <xacro:property name="min_mass" value="0.1"/>
 
 <!-- ################### XACRO Origins ############################# -->
-
+ <xacro:macro name="shell_origin">
+     <origin xyz="0 0 -.085" rpy="0 -0.1 3.14159" />
+ </xacro:macro>
+ 
  <xacro:macro name="zero_origin">
      <origin xyz="0 0 0" rpy="0 0 0" />
  </xacro:macro>
@@ -139,7 +142,7 @@
 
 <!-- BEGIN Chassis -->
   <link name='chassis'>
-      <pose>0 0 0.1 0 0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
 
       <inertial>
           <mass value="15.0"/>
@@ -155,9 +158,11 @@
     </collision>
 
     <visual name='chassis_visual'>
-        <xacro:zero_origin/>
+        <!-- <xacro:zero_origin/> -->
+        <xacro:shell_origin/>
         <geometry>
-            <box size=".4 .2 .1"/>
+            <!-- <box size=".4 .2 .1"/> -->
+            <mesh filename="package://udacity_bot/models/meshes/green_shell.dae"/>
         </geometry>
     </visual>
 
