@@ -158,9 +158,11 @@
     </collision>
 
     <visual name='chassis_visual'>
-        <xacro:zero_origin/>
+        <!-- <xacro:zero_origin/> -->
+        <xacro:shell_origin/>
         <geometry>
-            <box size=".4 .2 .1"/> 
+            <!-- <box size=".4 .2 .1"/> -->
+            <mesh filename="package://udacity_bot/models/meshes/green_shell.dae"/>
         </geometry>
     </visual>
 

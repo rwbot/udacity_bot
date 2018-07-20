@@ -2,7 +2,7 @@
 <launch>
 
   <!-- send urdf to param server -->
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find udacity_bot)/urdf/udacity_bot.xacro'" />
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find udacity_bot)/urdf/shell.xacro'" />
   
 
     <!--spawn a robot in gazebo world-->
