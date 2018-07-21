@@ -13,13 +13,9 @@
 
 <!-- ################### XACRO Origins ############################# -->
  <xacro:macro name="shell_origin">
-     <origin xyz="0 0 -.1" rpy="-.1 0 1.5707" />
+     <origin xyz="0 0 0" rpy="0 0 -1.5707" />
  </xacro:macro>
-
-  <xacro:macro name="shell_collision_origin">
-     <origin xyz="0 0 -.1" rpy="0 0 0" />
- </xacro:macro>
-
+ 
  <xacro:macro name="zero_origin">
      <origin xyz="0 0 0" rpy="0 0 0" />
  </xacro:macro>
@@ -97,11 +93,12 @@
        </collision>
        <visual>
              <xacro:wheel_link_origin/>
-             <xacro:generate_geometry shape="cylinder" radius="0.1" length="0.05" />
+             <!--<xacro:generate_geometry shape="cylinder" radius="0.1" length="0.05" />-->
+             <xacro:generate_geometry shape="sphere" radius="0.001"/>
        </visual>
    </link>
 
-   <xacro:generate_gazebo_reference link_name="${side}_wheel" color="GreyTransparent"/>
+   <!--<xacro:generate_gazebo_reference link_name="${side}_wheel" color="Green"/>-->
 
 </xacro:macro>
 
@@ -110,11 +107,11 @@
     <joint type="continuous" name="${side}_wheel_hinge">
 
         <xacro:if value="${side == 'left'}">
-            <origin xyz="0.1 0.169 0" rpy="0 0 0"/>
+            <origin xyz="0 0.15 0" rpy="0 0 0"/>
         </xacro:if>
 
         <xacro:if value="${side == 'right'}">
-            <origin xyz="0.1 -0.169 0" rpy="0 0 0"/>
+            <origin xyz="0 -0.15 0" rpy="0 0 0"/>
         </xacro:if>
 
         <parent link="chassis"/>
@@ -158,24 +155,22 @@
         <xacro:zero_origin/>
         <geometry>
             <box size=".4 .2 .1"/>
-            <!--<sphere radius="0.01"/>-->
-            <!-- <mesh filename="package://udacity_bot/models/meshes/green_shell.dae"/> -->
         </geometry>
     </collision>
 
     <visual name='chassis_visual'>
-        <!-- <xacro:zero_origin/> -->
-        <xacro:zero_origin/>
+        <!--<xacro:zero_origin/>-->
+        <xacro:shell_origin/>
         <geometry>
-            <!-- <box size=".4 .2 .1"/> -->
+            <!--<box size=".4 .2 .1"/> -->
             <mesh filename="package://udacity_bot/models/meshes/green_shell.dae"/>
         </geometry>
     </visual>
 
     <collision name='back_caster_collision'>
-        <origin xyz="-0.1 0 -0.02" rpy=" 0 0 0"/>
+        <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
         <geometry>
-            <sphere radius="0.01"/>
+            <sphere radius="0.0499"/>
         </geometry>
         <surface>
               <friction>
@@ -190,9 +185,9 @@
     </collision>
 
     <visual name='back_caster_visual'>
-        <origin xyz="-0.1 0 -0.02" rpy=" 0 0 0"/>
+        <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
         <geometry>
-            <sphere radius="0.01"/>
+            <sphere radius="0.001"/>
         </geometry>
     </visual>
 
@@ -216,12 +211,10 @@
     <visual name='front_caster_visual'>
         <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
         <geometry>
-            <sphere radius="0.05"/>
+            <sphere radius="0.001"/>
         </geometry>
     </visual>
-
 </link>
-
 <!-- END Chassis -->
 
 <!-- ################### LINK Definitions ############################# -->
@@ -257,25 +250,20 @@
         </inertial>
         <collision>
             <xacro:zero_origin/>
-            <xacro:generate_geometry shape="sphere" radius="0.02"/>
+            <xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>
         </collision>
         <visual>
             <xacro:zero_origin/>
-            <xacro:generate_geometry shape="sphere" radius="0.01"/>
+            <!--<xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>-->
+            <xacro:generate_geometry shape="sphere" radius="0.001"/>
         </visual>
     </link>
 
-    <xacro:generate_gazebo_reference link_name="camera" color="Red"/>
-
-
-
     <joint name="camera_joint" type="fixed">
-        <origin xyz="0.1 0 0" rpy="0 0 0"/>
+        <origin xyz="0.2 0 0" rpy="0 0 0"/>
         <parent link="chassis"/>
         <child link="camera"/>
     </joint>
-
-
 
     <link name="hokuyo">
         <inertial>
@@ -290,15 +278,17 @@
         </collision>
         <visual>
             <xacro:zero_origin/>
-            <!--<xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>-->
+            <xacro:generate_geometry shape="sphere" radius="0.001"/>
+            <!--
             <geometry>
                 <mesh filename="package://udacity_bot/models/meshes/hokuyo.dae"/>
             </geometry>
+            -->
         </visual>
     </link>
 
     <joint name="hokuyo_joint" type="fixed">
-        <origin xyz="-0.02 0 0.153" rpy="0 0 0"/>
+        <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
         <parent link="chassis"/>
         <child link="hokuyo"/>
     </joint>
