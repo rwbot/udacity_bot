@@ -15,7 +15,7 @@
  <xacro:macro name="shell_origin">
      <origin xyz="0 0 -.1" rpy="-.1 0 1.5707" />
  </xacro:macro>
- 
+
  <xacro:macro name="zero_origin">
      <origin xyz="0 0 0" rpy="0 0 0" />
  </xacro:macro>
@@ -153,7 +153,8 @@
     <collision name='collision'>
         <xacro:zero_origin/>
         <geometry>
-            <box size=".4 .2 .1"/>
+            <!-- <box size=".4 .2 .1"/> -->
+            <sphere radius="0.15"/>
         </geometry>
     </collision>
 
@@ -167,9 +168,9 @@
     </visual>
 
     <collision name='back_caster_collision'>
-        <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+        <origin xyz="-0.1 0 -0.02" rpy=" 0 0 0"/>
         <geometry>
-            <sphere radius="0.05"/>
+            <sphere radius="0.01"/>
         </geometry>
         <surface>
               <friction>
@@ -184,13 +185,13 @@
     </collision>
 
     <visual name='back_caster_visual'>
-        <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+        <origin xyz="-0.1 0 -0.02" rpy=" 0 0 0"/>
         <geometry>
-            <sphere radius="0.05"/>
+            <sphere radius="0.01"/>
         </geometry>
     </visual>
 
-    <collision name='front_caster_collision'>
+    <!-- <collision name='front_caster_collision'>
         <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
         <geometry>
             <sphere radius="0.0499"/>
@@ -213,7 +214,7 @@
             <sphere radius="0.05"/>
         </geometry>
     </visual>
-</link>
+</link> -->
 <!-- END Chassis -->
 
 <!-- ################### LINK Definitions ############################# -->
@@ -284,7 +285,7 @@
     </link>
 
     <joint name="hokuyo_joint" type="fixed">
-        <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
+        <origin xyz="0.13 0 0.13" rpy="0 0 0"/>
         <parent link="chassis"/>
         <child link="hokuyo"/>
     </joint>
