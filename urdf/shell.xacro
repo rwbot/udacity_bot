@@ -15,6 +15,10 @@
  <xacro:macro name="shell_origin">
      <origin xyz="0 0 -.1" rpy="-.1 0 1.5707" />
  </xacro:macro>
+ 
+  <xacro:macro name="shell_collision_origin">
+     <origin xyz="0 0 -.1" rpy="0 0 0" />
+ </xacro:macro>
 
  <xacro:macro name="zero_origin">
      <origin xyz="0 0 0" rpy="0 0 0" />
@@ -97,7 +101,7 @@
        </visual>
    </link>
 
-   <xacro:generate_gazebo_reference link_name="${side}_wheel" color="Green"/>
+   <xacro:generate_gazebo_reference link_name="${side}_wheel" color="GreyTransparent"/>
 
 </xacro:macro>
 
@@ -106,11 +110,11 @@
     <joint type="continuous" name="${side}_wheel_hinge">
 
         <xacro:if value="${side == 'left'}">
-            <origin xyz="0 0.15 0" rpy="0 0 0"/>
+            <origin xyz="0.1 0.169 0" rpy="0 0 0"/>
         </xacro:if>
 
         <xacro:if value="${side == 'right'}">
-            <origin xyz="0 -0.15 0" rpy="0 0 0"/>
+            <origin xyz="0.1 -0.169 0" rpy="0 0 0"/>
         </xacro:if>
 
         <parent link="chassis"/>
@@ -151,10 +155,11 @@
     </inertial>
 
     <collision name='collision'>
-        <xacro:zero_origin/>
+        <xacro:shell_origin/>
         <geometry>
             <!-- <box size=".4 .2 .1"/> -->
-            <sphere radius="0.15"/>
+            <!--<sphere radius="0.01"/>-->
+            <mesh filename="package://udacity_bot/models/meshes/green_shell.dae"/>
         </geometry>
     </collision>
 
@@ -164,6 +169,16 @@
         <geometry>
             <!-- <box size=".4 .2 .1"/> -->
             <mesh filename="package://udacity_bot/models/meshes/green_shell.dae"/>
+            <surface>
+              <friction>
+                    <ode>
+                        <mu>0</mu>
+                        <mu2>0</mu2>
+                        <slip1>1.0</slip1>
+                        <slip2>1.0</slip2>
+                    </ode>
+              </friction>
+        </surface>
         </geometry>
     </visual>
 
@@ -214,7 +229,9 @@
             <sphere radius="0.05"/>
         </geometry>
     </visual>
-</link> -->
+    -->
+</link>
+
 <!-- END Chassis -->
 
 <!-- ################### LINK Definitions ############################# -->
@@ -250,19 +267,25 @@
         </inertial>
         <collision>
             <xacro:zero_origin/>
-            <xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>
+            <xacro:generate_geometry shape="sphere" radius="0.02"/>
         </collision>
         <visual>
             <xacro:zero_origin/>
-            <xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>
+            <xacro:generate_geometry shape="sphere" radius="0.01"/>
         </visual>
     </link>
+    
+    <xacro:generate_gazebo_reference link_name="camera" color="Red"/>
+    
+    
 
     <joint name="camera_joint" type="fixed">
-        <origin xyz="0.2 0 0" rpy="0 0 0"/>
+        <origin xyz="0.1 0 0" rpy="0 0 0"/>
         <parent link="chassis"/>
         <child link="camera"/>
     </joint>
+    
+    
 
     <link name="hokuyo">
         <inertial>
@@ -285,7 +308,7 @@
     </link>
 
     <joint name="hokuyo_joint" type="fixed">
-        <origin xyz="0.13 0 0.13" rpy="0 0 0"/>
+        <origin xyz="-0.02 0 0.153" rpy="0 0 0"/>
         <parent link="chassis"/>
         <child link="hokuyo"/>
     </joint>
