@@ -15,7 +15,7 @@
  <xacro:macro name="shell_origin">
      <origin xyz="0 0 -.1" rpy="-.1 0 1.5707" />
  </xacro:macro>
- 
+
   <xacro:macro name="shell_collision_origin">
      <origin xyz="0 0 -.1" rpy="0 0 0" />
  </xacro:macro>
@@ -155,30 +155,20 @@
     </inertial>
 
     <collision name='collision'>
-        <xacro:shell_origin/>
+        <xacro:zero_origin/>
         <geometry>
-            <!-- <box size=".4 .2 .1"/> -->
+            <box size=".4 .2 .1"/>
             <!--<sphere radius="0.01"/>-->
-            <mesh filename="package://udacity_bot/models/meshes/green_shell.dae"/>
+            <!-- <mesh filename="package://udacity_bot/models/meshes/green_shell.dae"/> -->
         </geometry>
     </collision>
 
     <visual name='chassis_visual'>
         <!-- <xacro:zero_origin/> -->
-        <xacro:shell_origin/>
+        <xacro:zero_origin/>
         <geometry>
             <!-- <box size=".4 .2 .1"/> -->
             <mesh filename="package://udacity_bot/models/meshes/green_shell.dae"/>
-            <surface>
-              <friction>
-                    <ode>
-                        <mu>0</mu>
-                        <mu2>0</mu2>
-                        <slip1>1.0</slip1>
-                        <slip2>1.0</slip2>
-                    </ode>
-              </friction>
-        </surface>
         </geometry>
     </visual>
 
@@ -206,7 +196,7 @@
         </geometry>
     </visual>
 
-    <!-- <collision name='front_caster_collision'>
+    <collision name='front_caster_collision'>
         <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
         <geometry>
             <sphere radius="0.0499"/>
@@ -229,7 +219,7 @@
             <sphere radius="0.05"/>
         </geometry>
     </visual>
-    -->
+
 </link>
 
 <!-- END Chassis -->
@@ -274,18 +264,18 @@
             <xacro:generate_geometry shape="sphere" radius="0.01"/>
         </visual>
     </link>
-    
+
     <xacro:generate_gazebo_reference link_name="camera" color="Red"/>
-    
-    
+
+
 
     <joint name="camera_joint" type="fixed">
         <origin xyz="0.1 0 0" rpy="0 0 0"/>
         <parent link="chassis"/>
         <child link="camera"/>
     </joint>
-    
-    
+
+
 
     <link name="hokuyo">
         <inertial>
