@@ -173,8 +173,7 @@
     </collision>
 
     <visual name='chassis_visual'>
-        <xacro:zero_origin/>
-        <!-- <xacro:shell_origin/> -->
+        <xacro:shell_origin/>
         <geometry>
             <!--<box size=".4 .2 .1"/>-->
             <!-- <cylinder radius="0.1" length="0.4"/> -->
@@ -303,7 +302,7 @@
     </link>
 
     <joint name="hokuyo_joint" type="fixed">
-        <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
+        <origin xyz="0.15 0 0.15" rpy="0 0 0"/>
         <parent link="chassis"/>
         <child link="hokuyo"/>
     </joint>
