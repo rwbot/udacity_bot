@@ -11,10 +11,12 @@ int main(int argc, char** argv)
     MoveBaseClient ac("move_base", true);
 
     // Wait for the action server to come up
-    ROS_INFO("Waiting for the move_base action server");
+        ROS_INFO("Waiting for the move_base action server                   SEARCHING FOR TARGET KART");
+  // ROS_INFO("SEARCHING FOR TARGET");
     ac.waitForServer(ros::Duration(5));
 
-    ROS_INFO("Connected to move_base server");
+        ROS_INFO("Connected to move_base server                             TARGET KART CONFIRMED");                                 
+  		// ROS_INFO("TARGET CONFIRMED");
 
     move_base_msgs::MoveBaseGoal goal;
 
@@ -31,13 +33,15 @@ int main(int argc, char** argv)
     goal.target_pose.pose.orientation.z = 0.0;
     goal.target_pose.pose.orientation.w = 1.0;
 
-    ROS_INFO("Sending goal");
+   	    ROS_INFO("Sending goal                                              CHASING TARGET KART");
+  		// ROS_INFO("CHASING TARGET");
     ac.sendGoal(goal);
 
     ac.waitForResult();
 
     if (ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
-        ROS_INFO("Excellent! Your robot has reached the goal position.");
+    	ROS_INFO("Excellent! Your robot has reached the goal position.      GREEN SHELL CONFIRMED HIT !!!");
+      	// ROS_INFO("GREEN SHELL CONFIRMED HIT !!!");
     else
         ROS_INFO("The robot failed to reach the goal position");
 
