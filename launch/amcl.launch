@@ -3,6 +3,7 @@
 <launch>
 
     <include file="$(find udacity_bot)/launch/udacity_world.launch"/>
+        <!--<arg name="model" value="$(find udacity_bot/"/>-->
 
     <!-- Map Server -->
     <!-- Loads the provided map -->

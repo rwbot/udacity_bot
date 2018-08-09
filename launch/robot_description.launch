@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <launch>
 
-  <!-- send urdf to param server -->
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find udacity_bot)/urdf/shell.xacro'" />
+    <!-- NOW DONE IN THE ROBOT'S LAUNCH FILE -->
+
+  <!-- send urdf to param server 
+  <param name="robot_description" command="$(find xacro)/xacro - -inorder '$(find udacity_bot)/urdf/shell.xacro'" />
   
 
-    <!--spawn a robot in gazebo world-->
+    <!- -spawn a robot in gazebo world- ->
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" clear_params="true" output="screen" args="-urdf -param robot_description -model udacity_bot" />
     
+    -->
 
       <!--Start jointstate publisher & robotstate publisher. These publish the TFs of the URDF of the robot links and joints.-->
     <!--Send fake joint values-->

@@ -3,7 +3,7 @@
 <launch>
 
   <!-- send urdf to param server -->
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find udacity_bot)/urdf/shelly.xacro'" />
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find udacity_bot)/urdf/udacity_bot.xacro'" />
   
 
     <!--spawn a robot in gazebo world-->
@@ -14,7 +14,7 @@
     
 
     <include file="$(find udacity_bot)/launch/udacity_world.launch"/>
-    
+        <!--<arg name="model" value="$(find udacity_bot/"/>-->
 
     <!-- Map Server -->
     <!-- Loads the provided map -->
@@ -45,12 +45,17 @@
         <param name="update_min_d" value="0.01"/>
         <param name="update_min_a" value="0.01"/>
 		<param name="min_particles" value="10"/>
-		<param name="max_particles" value="40"/>
+		<param name="max_particles" value="100"/>
 		<param name="initial_pose_x" value="0.0"/>
 		<param name="initial_pose_y" value="0.0"/>
 		<param name="initial_pose_a" value="0.0"/>
 
 
+
+        <!-- <param name="odom_alpha1" value="0.05"/>
+        <param name="odom_alpha2" value="0.05"/>
+        <param name="odom_alpha3" value="0.01"/>
+        <param name="odom_alpha4" value="0.05"/> -->
 
         <!-- <param name="" value=""/> -->
         <param name="laser_model_type" value="likelihood_field"/>
